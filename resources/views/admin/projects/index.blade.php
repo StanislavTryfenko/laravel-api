@@ -21,6 +21,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Type</th>
                             <th scope="col">Technologies</th>
+                            <th scope="col">Showcase</th>
                             <th scope="col" style="width: 210px">Actions</th>
                         </tr>
                     </thead>
@@ -48,6 +49,7 @@
                                         <span>Technologies not found</span>
                                     @endforelse
                                 </td>
+                                <td>{{$project->showcase}}</td>
                                 <td>
                                     <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">View</a>
                                     <a class="btn btn-primary" href="{{ route('admin.projects.edit', $project) }}">Edit</a>

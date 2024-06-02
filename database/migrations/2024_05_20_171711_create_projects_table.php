@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('slug', 255);
             $table->text('description', 4096)->nullable();
             $table->string('image', 255)->nullable();
+            $table->string('youtube', 255)->nullable();
+            $table->string('github', 255)->nullable();
+            $table->boolean('showcase')->default(false);           
             $table->timestamps();
         });
     }
