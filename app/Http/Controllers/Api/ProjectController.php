@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
@@ -17,10 +18,19 @@ class ProjectController extends Controller
 
     public function show($slug)
     {
+
         $project = Project::with('technologies', 'type')->where('slug', $slug)->first();
-        return response()->json([
-            'success' => true,
-            'project' => $project
-        ]);
+
+        if ($project) {
+            return response()->json([
+                'success' => true,
+                'response' => $project,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'response' => 'Nice link but wrong project slug, sorry!',
+            ]);
+        }
     }
 }
